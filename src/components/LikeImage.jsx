@@ -1,16 +1,11 @@
 import React, { useState } from 'react'
-
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
-
+import togetherComponent from './match'
+ const LikeImage=(props)=> {
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={props.change}>Like Image {props.likeImageCounter}</button>
     </div>
   )
 }
+let callLikeImage  = togetherComponent(LikeImage)
+export default callLikeImage;
